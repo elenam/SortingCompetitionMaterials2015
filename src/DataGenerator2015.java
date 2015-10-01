@@ -52,22 +52,36 @@ public class DataGenerator2015 {
 
 		String[] data = new String[n];
 
-		generateCluster(data, 0, 100, 40, 0.5);
+		//generateCluster(data, 0, 100, 40, 0.5);
 
-		for (int i = 0; i < 100; ++i) {
-			System.out.println(data[i]);
-		}
+		
+		int clusterSize = n / clusters;
 
 		// generate larger clusters
 		for (int i = 0; i < clusters / 2; ++i) {
-
+			generateCluster(data, i * clusterSize, clusterSize, n/10);
 		}
 
 		// generate smaller clusters
 		for (int i = 0; i < clusters / 2; ++i) {
-
+			generateCluster(data, (i + clusters/2) * clusterSize, clusterSize, n/1000);
 		}
+		
+		//
+		for (int i = 0; i < 100; ++i) {
+			System.out.println(data[i]);
+		}
+		
+			
 		// shuffle well
+		for (int i = 0; i < 2 * n; ++i) {
+			int i1 = rand.nextInt(n);
+			int i2 = rand.nextInt(n);
+			String temp = data[i1];
+			data[i1] = data[i2];
+			data[i2] = temp;
+		}
+		
 
 		System.out.println("Generating data: file = " + filename + " n = " + n
 				+ " number of clusters = " + clusters);
@@ -75,16 +89,16 @@ public class DataGenerator2015 {
 		System.out.println(pad(8567));
 		System.out.println(pad(1));
 
-		// // the output goes to the standard output (console)
-		// if (filename.equals("nofile")) {
-		// generateAndWriteOutputStandardOut(n, lambda);
-		// } else { //output goes to a file
-		// try {
-		// generateAndWriteOutput(new PrintWriter(filename), n, lambda);
-		// } catch (FileNotFoundException e) {
-		// e.printStackTrace();
-		// }
-		// }
+		 // the output goes to the standard output (console)
+		 if (filename.equals("nofile")) {
+			 writeOutputStandardOut(data);
+		 } else { //output goes to a file
+		 try {
+			 writeOutputFile(new PrintWriter(filename), data);
+		 } catch (FileNotFoundException e) {
+			 e.printStackTrace();
+		 }
+		 }
 
 	}
 
@@ -122,7 +136,7 @@ public class DataGenerator2015 {
 	 * @param p a probability of success
 	 */
 	private static void generateCluster(String[] data, int start, int n,
-			int maxRange, double p) {
+			int maxRange) {
 		// two random points in the array
 		int range = 20 + rand.nextInt(maxRange - 20); // guarantees that the
 														// smallest cluster has
@@ -131,7 +145,7 @@ public class DataGenerator2015 {
 		// the array to be used as offsets for the given range
 		int[] countRolls = new int[range + 1];
 
-		p = rand.nextDouble();
+		double p = rand.nextDouble();
 
 		// count how many times each value occurred. The counts follow binomial
 		// distribution.
@@ -153,7 +167,7 @@ public class DataGenerator2015 {
 		int k = start;
 		for (int i = 0; i <= range; ++i) { // for every value of the random
 											// variable...
-			System.out.println(countRolls[i]);
+			//System.out.println(countRolls[i]);
 			for (int j = 0; j < countRolls[i]; ++j) { // ...add that many copies
 														// of the element
 				data[k] = pad(clusterLowest + i);
@@ -170,5 +184,18 @@ public class DataGenerator2015 {
 				x++;
 		}
 		return x;
+	}
+	
+	private static void writeOutputStandardOut(String [] data) {
+		for (int i = 0; i < data.length; ++i) {
+			System.out.println(data[i]);
+		}
+	}
+	
+	private static void writeOutputFile(PrintWriter out, String [] data) {
+		for (int i = 0; i < data.length; ++i) {
+			out.println(data[i]);
+		}
+		out.close();
 	}
 }
