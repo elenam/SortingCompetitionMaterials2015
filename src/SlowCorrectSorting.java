@@ -61,6 +61,7 @@ public class SlowCorrectSorting {
 		Arrays.sort(toSort, new StringComparator());
 	}
 	
+	
 	private static void writeOutResult(String [] sorted, String outputFilename) {
 		try {
 			PrintWriter out = new PrintWriter(outputFilename);
@@ -104,7 +105,7 @@ public class SlowCorrectSorting {
 			int digit1 = new Integer(s.substring(2,3));
 			int digit2 = new Integer(s.substring(3,4));
 			int digit3 = new Integer(s.substring(4,5));
-			int digit4 = new Integer(s.substring(4,5));
+			int digit4 = new Integer(s.substring(5,6));
 			return digit1 + digit2 + digit3 + digit4;
 		}
 		
