@@ -67,10 +67,6 @@ public class DataGenerator2015 {
 			generateCluster(data, (i + clusters/2) * clusterSize, clusterSize, n/1000);
 		}
 		
-		//
-		for (int i = 0; i < 100; ++i) {
-			System.out.println(data[i]);
-		}
 		
 			
 		// shuffle well
