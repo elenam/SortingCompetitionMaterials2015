@@ -137,8 +137,6 @@ public class DataGenerator2015 {
 	 *            the number of elements to be generated
 	 * @param maxRange
 	 *            maximum range of a cluster
-	 * @param p
-	 *            a probability of success
 	 */
 	private static void generateCluster(String[] data, int start, int n,
 			int maxRange) {
