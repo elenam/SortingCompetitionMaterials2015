@@ -52,26 +52,27 @@ public class DataGenerator2015 {
 
 		String[] data = new String[n];
 
-		//generateCluster(data, 0, 100, 40, 0.5);
+		// generateCluster(data, 0, 100, 40, 0.5);
 
 		// if the division is uneven, we make the clusters slightly bigger. Will
 		// get a very few elements overwritten, but that's ok
-		int clusterSize = (int) Math.ceil (((double) n) / clusters);
+		int clusterSize = (int) Math.ceil(((double) n) / clusters);
 
 		// generate larger clusters
 		for (int i = 0; i < 2 * clusters / 3; ++i) {
-			generateCluster(data, i * clusterSize, clusterSize, n/10);
+			generateCluster(data, i * clusterSize, clusterSize, n / 10);
 		}
 
 		// generate smaller clusters
 		for (int i = 0; i < clusters / 3 - 1; ++i) {
-			generateCluster(data, (i + 2 * clusters / 3) * clusterSize, clusterSize, n/1000);
+			generateCluster(data, (i + 2 * clusters / 3) * clusterSize,
+					clusterSize, n / 1000);
 		}
-		
-		
+
 		// the last cluster cannot go over
-		generateCluster(data, (clusters - 1) * clusterSize, n - (clusters - 1) * clusterSize, n/1000);
-			
+		generateCluster(data, (clusters - 1) * clusterSize, n - (clusters - 1)
+				* clusterSize, n / 1000);
+
 		// shuffle well
 		for (int i = 0; i < 2 * n; ++i) {
 			int i1 = rand.nextInt(n);
@@ -80,7 +81,6 @@ public class DataGenerator2015 {
 			data[i1] = data[i2];
 			data[i2] = temp;
 		}
-		
 
 		System.out.println("Generating data: file = " + filename + " n = " + n
 				+ " number of clusters = " + clusters);
@@ -88,16 +88,16 @@ public class DataGenerator2015 {
 		System.out.println(pad(8567));
 		System.out.println(pad(1));
 
-		 // the output goes to the standard output (console)
-		 if (filename.equals("nofile")) {
-			 writeOutputStandardOut(data);
-		 } else { //output goes to a file
-		 try {
-			 writeOutputFile(new PrintWriter(filename), data);
-		 } catch (FileNotFoundException e) {
-			 e.printStackTrace();
-		 }
-		 }
+		// the output goes to the standard output (console)
+		if (filename.equals("nofile")) {
+			writeOutputStandardOut(data);
+		} else { // output goes to a file
+			try {
+				writeOutputFile(new PrintWriter(filename), data);
+			} catch (FileNotFoundException e) {
+				e.printStackTrace();
+			}
+		}
 
 	}
 
@@ -106,7 +106,8 @@ public class DataGenerator2015 {
 	 * into a decimal. Return a string. Example: k = 8567, to be returned:
 	 * "0.000008567"
 	 * 
-	 * @param k an integer to be padded
+	 * @param k
+	 *            an integer to be padded
 	 * @return String representation of the padded int
 	 */
 	private static String pad(int k) {
@@ -128,11 +129,16 @@ public class DataGenerator2015 {
 	 * starting at the given position in the given array as padded strings
 	 * representing decimals
 	 * 
-	 * @param data the array where the generated elements go
-	 * @param start the starting position for this cluster
-	 * @param n the number of elements to be generated
-	 * @param maxRange maximum range of a cluster
-	 * @param p a probability of success
+	 * @param data
+	 *            the array where the generated elements go
+	 * @param start
+	 *            the starting position for this cluster
+	 * @param n
+	 *            the number of elements to be generated
+	 * @param maxRange
+	 *            maximum range of a cluster
+	 * @param p
+	 *            a probability of success
 	 */
 	private static void generateCluster(String[] data, int start, int n,
 			int maxRange) {
@@ -166,7 +172,7 @@ public class DataGenerator2015 {
 		int k = start;
 		for (int i = 0; i <= range; ++i) { // for every value of the random
 											// variable...
-			//System.out.println(countRolls[i]);
+			// System.out.println(countRolls[i]);
 			for (int j = 0; j < countRolls[i]; ++j) { // ...add that many copies
 														// of the element
 				data[k] = pad(clusterLowest + i);
@@ -184,14 +190,14 @@ public class DataGenerator2015 {
 		}
 		return x;
 	}
-	
-	private static void writeOutputStandardOut(String [] data) {
+
+	private static void writeOutputStandardOut(String[] data) {
 		for (int i = 0; i < data.length; ++i) {
 			System.out.println(data[i]);
 		}
 	}
-	
-	private static void writeOutputFile(PrintWriter out, String [] data) {
+
+	private static void writeOutputFile(PrintWriter out, String[] data) {
 		for (int i = 0; i < data.length; ++i) {
 			out.println(data[i]);
 		}

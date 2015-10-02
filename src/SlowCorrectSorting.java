@@ -29,11 +29,6 @@ public class SlowCorrectSorting {
 		
 		sort(toSort);
 		
-		//debugging print:
-//		for (String str: toSort) {
-//			System.out.println(str);
-//		}
-		
 		writeOutResult(toSort,outFileName);
 	}
 	
