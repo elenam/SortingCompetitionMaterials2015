@@ -25,7 +25,7 @@ public class DataGenerator2015 {
 	public static final int dataSize = 1000000000;
 
 	public static void main(String[] args) {
-		int defaultClusters = 100;
+		int defaultClusters = 99;
 		int clusters = defaultClusters;
 		int defaultN = 1000000;
 		int n = defaultN;
@@ -54,20 +54,23 @@ public class DataGenerator2015 {
 
 		//generateCluster(data, 0, 100, 40, 0.5);
 
-		
-		int clusterSize = n / clusters;
+		// if the division is uneven, we make the clusters slightly bigger. Will
+		// get a very few elements overwritten, but that's ok
+		int clusterSize = (int) Math.ceil (((double) n) / clusters);
 
 		// generate larger clusters
-		for (int i = 0; i < clusters / 2; ++i) {
+		for (int i = 0; i < 2 * clusters / 3; ++i) {
 			generateCluster(data, i * clusterSize, clusterSize, n/10);
 		}
 
 		// generate smaller clusters
-		for (int i = 0; i < clusters / 2; ++i) {
-			generateCluster(data, (i + clusters/2) * clusterSize, clusterSize, n/1000);
+		for (int i = 0; i < clusters / 3 - 1; ++i) {
+			generateCluster(data, (i + 2 * clusters / 3) * clusterSize, clusterSize, n/1000);
 		}
 		
 		
+		// the last cluster cannot go over
+		generateCluster(data, (clusters - 1) * clusterSize, n - (clusters - 1) * clusterSize, n/1000);
 			
 		// shuffle well
 		for (int i = 0; i < 2 * n; ++i) {
