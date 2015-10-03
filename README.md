@@ -11,6 +11,7 @@ and will be ran on a single processor.
 ## The data 
 The data to be sorted consists of strings representing decimal numbers in the range [0, 1). 
 Each number has 9 decimal places, padded with zeros as needed: `0.035648700`.
+The number of elements to be sorted will be between 500000 and 5000000.
 
 ### How is it sorted
 `n1` precedes `n2` in the ordering if and only if one of the following is true:
@@ -25,16 +26,15 @@ For instance:
 
 If `n1` and `n2` are exactly the same, they may appear in any order. 
 
-
-
-
-
-
-
-
-
+The file [SlowCorrectSorting.java](../blob/master/src/SlowCorrectSorting.java) gives a reference implementation of sorting. It uses Java `Comparator` to provide the comparision of two strings according to the above criterion and passes the data to `Arrays.sort()`. The sorted data is written to a file. Note that this implementation will be used to check the correctness of your sorting, i.e. your sorting must produce an identical result. 
 
 ### Data distribution
+
+The elements are generated in clusters in the range [0, 1). There will be 99 clusters that start at randomly chosen position in the range. The start position is chosen according to a random distribution (a position that is too close to the end of the data range for the cluster to fit is discarded and a new one is chosen). Each cluster contains n/99 elements (with some rounding).  
+
+2/3 of the clusters are "large" which means that they are generated with the maximum range of n/10 data, and 1/3 of the clusters are "small", generated with the maximum range of n/1000 elements. 
+
+
 
 
 
