@@ -14,9 +14,9 @@ import java.util.Scanner;
  * 
  */
 
-public class SlowCorrectSorting {
+public class Group0 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws InterruptedException {
 		if (args.length < 2) {
 			System.out
 					.println("Please run with two command line arguments: input and output file names");
@@ -25,10 +25,24 @@ public class SlowCorrectSorting {
 
 		String inputFileName = args[0];
 		String outFileName = args[1];
+		
+		String[] data = readInData(inputFileName);
+		
+		String [] toSort = data.clone();
+		
+		sort(toSort);  // JVM warmup
+		
+		toSort = data.clone();
+		
+		Thread.sleep(10); //to let other things finish before timing; adds stability of runs
 
-		String[] toSort = readInData(inputFileName);
-
+		long start = System.currentTimeMillis();
+		
 		sort(toSort);
+		
+		long end = System.currentTimeMillis();
+		
+		System.out.println(end - start);
 
 		writeOutResult(toSort, outFileName);
 	}
