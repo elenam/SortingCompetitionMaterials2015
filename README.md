@@ -70,3 +70,6 @@ Note that there are several more parts of the Algorithms assignment, including p
 
 The language used is Java 8 (as installed in the CSci lab). It's ran on a single CPU core.  
 
+I will post a script for running this program (with a correctness check and all), but for now a couple of things to know: run your program out of `/tmp` directory to avoid overhead of communications with the file server, and pin your program to a single core, i.e. run it like this:
+``taskset -c 0 java GroupN``
+
