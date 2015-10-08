@@ -4,19 +4,19 @@ import java.util.Random;
 
 public class DataGenerator2015 {
 	/**
-	 * Competition data is generated as follows: Data consists of
+	 * See Readme for an overview of the data generating process. 
+	 * The result is being written to the file given as the first
+	 * command line argument. 
 	 * 
 	 * @param args
-	 *            : arg[0] is the file name for the generated data arg[1] is the
-	 *            number of elements to sort arg[2] is the range of lengths for
-	 *            clusters for the Binomial distribution range arg[3] is the
-	 *            seed for the random number generator All arguments are
-	 *            optional. If there is only one argument, it is interpreted as
-	 *            the file name; if there are only two, the second one is
-	 *            interpreted as the number of elements. If some arguments are
-	 *            not provided, defaults are used. If no file name is provided
+	 *            : arg[0] is the file name for the generated data, arg[1] is the
+	 *            number of elements to sort, arg[2] is the number of 
+	 *            clusters, arg[3] is the seed for the random number generator. 
+	 *            All arguments are optional, defaults are specified in the program. 
+	 *            If no file name is provided
 	 *            or if the file name is given as "nofile", the output goes to
 	 *            standard output.
+	 *            
 	 * 
 	 *            Author: Elena Machkasova
 	 */
@@ -51,8 +51,6 @@ public class DataGenerator2015 {
 		}
 
 		String[] data = new String[n];
-
-		// generateCluster(data, 0, 100, 40, 0.5);
 
 		// if the division is uneven, we make the clusters slightly bigger. Will
 		// get a very few elements overwritten, but that's ok
