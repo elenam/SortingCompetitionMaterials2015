@@ -20,9 +20,9 @@ The number of elements to be sorted will be between 500000 and 5000000.
 2. The sums of the first four digits of `n1` and `n2` are **equal** and the value of `n1` is **smaller** than the value of `n2`.
 
 For instance: 
-- `n1 = 0.13226783` precedes `n2 = 0.98985673` in the ordering because `1 + 3 + 2 + 2 = 8`, which is 8 when taken modulo 10, `9 + 8 + 9 + 8 = 34` is `4` modulo 10, and `8 > 4`. 
-- `n1 = 0.132278961` precedes `n2 = 0.532821341` because the sum of their first four digist both equal 8 when taken modulo 10, and  `0.132278961 < 0.532821341`. 
-- `n1 = 0.132278961` precedes `n2 = 0.132278978` because their first four digits are exactly the same and `0.132278961 < 0.132278978`. This case is actually not different from the previous one. 
+- `n1 = 0.132267835` precedes `n2 = 0.989856735` in the ordering because `1 + 3 + 2 + 2 = 8`, which is 8 when taken modulo 10, `9 + 8 + 9 + 8 = 34` is `4` modulo 10, and `8 > 4`. 
+- `n1 = 0.1322789612` precedes `n2 = 0.5328213413` because the sum of their first four digist both equal 8 when taken modulo 10, and  `0.1322789612 < 0.5328213413`. 
+- `n1 = 0.1322789612` precedes `n2 = 0.1322789781` because their first four digits are exactly the same and `0.1322789612 < 0.1322789781`. This case is actually not different from the previous one. 
 
 If `n1` and `n2` are exactly the same, they may appear in any order. 
 
