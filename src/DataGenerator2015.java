@@ -4,19 +4,17 @@ import java.util.Random;
 
 public class DataGenerator2015 {
 	/**
-	 * See Readme for an overview of the data generating process. 
-	 * The result is being written to the file given as the first
-	 * command line argument. 
+	 * See Readme for an overview of the data generating process. The result is
+	 * being written to the file given as the first command line argument.
 	 * 
 	 * @param args
-	 *            : arg[0] is the file name for the generated data, arg[1] is the
-	 *            number of elements to sort, arg[2] is the number of 
-	 *            clusters, arg[3] is the seed for the random number generator. 
-	 *            All arguments are optional, defaults are specified in the program. 
-	 *            If no file name is provided
-	 *            or if the file name is given as "nofile", the output goes to
-	 *            standard output.
-	 *            
+	 *            : arg[0] is the file name for the generated data, arg[1] is
+	 *            the number of elements to sort, arg[2] is the number of
+	 *            clusters, arg[3] is the seed for the random number generator.
+	 *            All arguments are optional, defaults are specified in the
+	 *            program. If no file name is provided or if the file name is
+	 *            given as "nofile", the output goes to standard output.
+	 * 
 	 * 
 	 *            Author: Elena Machkasova
 	 */
@@ -84,8 +82,8 @@ public class DataGenerator2015 {
 				+ " number of clusters = " + clusters);
 
 		// test prints
-		//System.out.println(pad(8567));
-		//System.out.println(pad(1));
+		// System.out.println(pad(8567));
+		// System.out.println(pad(1));
 
 		// the output goes to the standard output (console)
 		if (filename.equals("nofile")) {
