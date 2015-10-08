@@ -56,6 +56,16 @@ The only method in the [Group0.java](https://github.com/elenam/SortingCompetitio
 
 Even though you are not modifying anything other than the `sort` method, you still need to submit your entire class: copy the template, rename the Java class to your group number, and change the`sort` method. You may use supplementary classes, just don't forget to submit them. Make sure to add your names in comments when you submit. 
 
+### Dates:
+
+*Friday, Oct 9* in class (1pm) is the *preliminary* competition. Please send me all your materials no later than 10:30am on Friday. This is required for everyone in the class. Groups remain anonymous after this phase, but all the solutions (in bytecode) become available. 
+
+We may have a second preliminary competition some time the week of Oct 12. 
+
+*Thursday, Oct 22* in the lab (noon) is the *final* competition. All source code is posted immediately after that. Those in class will have their names revealed, others may choose to remain anonymous (but the code will still be posted). 
+
+Note that there are several more parts of the Algorithms assignment, including presentations and a write-up. Obviously, these are only for students in the class. 
+
 ### System specs
 
 The language used is Java 8 (as installed in the CSci lab). It's ran on a single CPU core.  
