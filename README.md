@@ -46,7 +46,17 @@ There are 3 sample data files with the corresponding outputs:
 
 There are also data files [old-smaple1.txt](https://github.com/elenam/SortingCompetitionMaterials2015/blob/master/old-smaple1.txt) and [old-smaple2.txt](https://github.com/elenam/SortingCompetitionMaterials2015/blob/master/old-smaple2.txt) that were generated using a slightly different data distribution: it had an equal number of wide and narrow clusters. The correspomnding output files are [old-out1.txt](https://github.com/elenam/SortingCompetitionMaterials2015/blob/master/old-out1.txt) and [old-out2.txt](https://github.com/elenam/SortingCompetitionMaterials2015/blob/master/old-out2.txt). 
 
+### Setup for sorting
 
+The file [Group0.java](https://github.com/elenam/SortingCompetitionMaterials2015/blob/master/src/Group0.java) provides a template for the setup for your solution. Your class will be called `GroupN', where `N` is the group number that will be assigned to your group. The template class runs the sorting method once before the timing for the [JVM warmup](http://alexandru-ersenie.com/2010/09/12/important-aspects-in-load-performance-testing-1-server-warm-up/). It also pauses for 10ms before the actual test to let any leftover I/O to finish. Since the warmup and the actual sorting are done on the same array (for no reason other than simplicity), the array is cloned from the same input data. 
 
+The Data reading, the array cloning, the warmup sorting, and writing out the output are all outside of the timed portion of the method, and thus do not affect the total time. 
 
+The only method in the [Group0.java](https://github.com/elenam/SortingCompetitionMaterials2015/blob/master/src/Group0.java) files that you may modify is the `sort` method (although it still needs to take the arary of strings). Once the method finishes, the `toSort` array must contain the sorted data as strings. The data is then written to a file. The correctness check will perform the `diff` on the output of your algorithm and the one provided by the reference sorting implementation (the one in the Group0.java file). 
+
+Even though you are not modifying anything other than the `sort` method, you still need to submit your entire class: copy the template, rename the Java class to your group number, and change the`sort` method. You may use supplementary classes, just don't forget to submit them. Make sure to add your names in comments when you submit. 
+
+### System specs
+
+The language used is Java 8 (as installed in the CSci lab). It's ran on a single CPU core.  
 
