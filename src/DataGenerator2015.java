@@ -58,18 +58,18 @@ public class DataGenerator2015 {
 		// get a very few elements overwritten, but that's ok
 		int clusterSize = (int) Math.ceil(((double) n) / clusters);
 
-		// generate larger clusters
+		// generate wide clusters (2/3 of data)
 		for (int i = 0; i < 2 * clusters / 3; ++i) {
 			generateCluster(data, i * clusterSize, clusterSize, n / 10);
 		}
 
-		// generate smaller clusters
+		// generate narrow clusters (1/3 data)
 		for (int i = 0; i < clusters / 3 - 1; ++i) {
 			generateCluster(data, (i + 2 * clusters / 3) * clusterSize,
 					clusterSize, n / 1000);
 		}
 
-		// the last cluster cannot go over
+		// the last cluster cannot go over, so handling it separately
 		generateCluster(data, (clusters - 1) * clusterSize, n - (clusters - 1)
 				* clusterSize, n / 1000);
 
@@ -85,8 +85,9 @@ public class DataGenerator2015 {
 		System.out.println("Generating data: file = " + filename + " n = " + n
 				+ " number of clusters = " + clusters);
 
-		System.out.println(pad(8567));
-		System.out.println(pad(1));
+		// test prints
+		//System.out.println(pad(8567));
+		//System.out.println(pad(1));
 
 		// the output goes to the standard output (console)
 		if (filename.equals("nofile")) {
