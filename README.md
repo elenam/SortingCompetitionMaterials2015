@@ -62,7 +62,7 @@ Even though you are not modifying anything other than the `sort` method, you sti
 
 We may have a second preliminary competition some time the week of Oct 12. 
 
-*Thursday, Oct 22* in the lab (noon) is the *final* competition. All source code is posted immediately after that. Those in class will have their names revealed, others may choose to remain anonymous (but the code will still be posted). 
+*Thursday, Oct 22* in the lab (2pm) is the *final* competition. All source code is posted immediately after that. Those in class will have their names revealed, others may choose to remain anonymous (but the code will still be posted). 
 
 Note that there are several more parts of the Algorithms assignment, including presentations and a write-up. Obviously, these are only for students in the class. 
 
