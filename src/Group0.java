@@ -66,6 +66,7 @@ public class Group0 {
 		return input.toArray(new String[0]); // convert to array of strings
 	}
 
+	// YOUR SORTING METHOD GOES HERE: (you may call other methods and use other classes). 
 	private static void sort(String[] toSort) {
 		Arrays.sort(toSort, new StringComparator());
 	}
