@@ -44,7 +44,7 @@ There are 3 sample data files with the corresponding outputs:
 | [sample4.txt](https://github.com/elenam/SortingCompetitionMaterials2015/blob/master/sample4.txt)| [out4.txt](https://github.com/elenam/SortingCompetitionMaterials2015/blob/master/out4.txt)    | 2000000            |
 | [sample5.txt](https://github.com/elenam/SortingCompetitionMaterials2015/blob/master/sample5.txt)| [out5.txt](https://github.com/elenam/SortingCompetitionMaterials2015/blob/master/out5.txt)    | 5000000            |
 
-There are also data files [old-smaple1.txt](https://github.com/elenam/SortingCompetitionMaterials2015/blob/master/old-smaple1.txt) and [old-smaple2.txt](https://github.com/elenam/SortingCompetitionMaterials2015/blob/master/old-smaple2.txt) that were generated using a slightly different data distribution: it had an equal number of wide and narrow clusters. The correspomnding output files are [old-out1.txt](https://github.com/elenam/SortingCompetitionMaterials2015/blob/master/old-out1.txt) and [old-out2.txt](https://github.com/elenam/SortingCompetitionMaterials2015/blob/master/old-out2.txt). 
+There are also data files [old-sample1.txt](https://github.com/elenam/SortingCompetitionMaterials2015/blob/master/old-sample1.txt) and [old-sample2.txt](https://github.com/elenam/SortingCompetitionMaterials2015/blob/master/old-sample2.txt) that were generated using a slightly different data distribution: it had an equal number of wide and narrow clusters. The correspomnding output files are [old-out1.txt](https://github.com/elenam/SortingCompetitionMaterials2015/blob/master/old-out1.txt) and [old-out2.txt](https://github.com/elenam/SortingCompetitionMaterials2015/blob/master/old-out2.txt). 
 
 ### Setup for sorting
 
