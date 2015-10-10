@@ -84,10 +84,14 @@ public class Group0 {
 	}
 
 	/**
-	 * The comparator provides a comparison method for strings The strings will
-	 * be sorted by the following: by length (in increasing order), within each
-	 * length, by the sum of all ones (also in increasing order) within each
-	 * group as determined above, alphabetically.
+	 * The comparator implements the following comparison of strings of 
+	 * the form 0.123456789 with exactly 9 digits after the decimal point:
+	 * 
+	 * n1 precedes n2 in the ordering if and only if one of the following is true:
+	 * 
+	 * - The sum of the first four digits (after the decimal point) of n1 modulo 10 is greater than the sum of the 
+	 *   first four digits of n2 modulo 10.
+	 * - The sums of the first four digits of n1 and n2 are equal and the value of n1 is smaller than the value of n2.
 	 * 
 	 * @author elenam
 	 * 
