@@ -44,7 +44,7 @@ There are 3 sample data files with the corresponding outputs:
 | [sample4.txt](https://github.com/elenam/SortingCompetitionMaterials2015/blob/master/sample4.txt)| [out4.txt](https://github.com/elenam/SortingCompetitionMaterials2015/blob/master/out4.txt)    | 2000000            |
 | [sample5.txt](https://github.com/elenam/SortingCompetitionMaterials2015/blob/master/sample5.txt)| [out5.txt](https://github.com/elenam/SortingCompetitionMaterials2015/blob/master/out5.txt)    | 5000000            |
 
-There are also data files [old-smaple1.txt](https://github.com/elenam/SortingCompetitionMaterials2015/blob/master/old-smaple1.txt) and [old-smaple2.txt](https://github.com/elenam/SortingCompetitionMaterials2015/blob/master/old-smaple2.txt) that were generated using a slightly different data distribution: it had an equal number of wide and narrow clusters. The correspomnding output files are [old-out1.txt](https://github.com/elenam/SortingCompetitionMaterials2015/blob/master/old-out1.txt) and [old-out2.txt](https://github.com/elenam/SortingCompetitionMaterials2015/blob/master/old-out2.txt). 
+There are also data files [old-sample1.txt](https://github.com/elenam/SortingCompetitionMaterials2015/blob/master/old-sample1.txt) and [old-sample2.txt](https://github.com/elenam/SortingCompetitionMaterials2015/blob/master/old-sample2.txt) that were generated using a slightly different data distribution: it had an equal number of wide and narrow clusters. The correspomnding output files are [old-out1.txt](https://github.com/elenam/SortingCompetitionMaterials2015/blob/master/old-out1.txt) and [old-out2.txt](https://github.com/elenam/SortingCompetitionMaterials2015/blob/master/old-out2.txt). 
 
 ### Setup for sorting
 
@@ -73,3 +73,4 @@ The language used is Java 8 (as installed in the CSci lab). It's ran on a single
 I will post a script for running this program (with a correctness check and all), but for now a couple of things to know: run your program out of `/tmp` directory to avoid overhead of communications with the file server, and pin your program to a single core, i.e. run it like this:
 ``taskset -c 0 java GroupN``
 
+Machines that we will be running the competition on have AMD 8350 eight-core processor. In the teaching lab such machines are: sentinel, axiom, eva01, macross, kenshiro, reliant, neoprene, tang, bebop. 
