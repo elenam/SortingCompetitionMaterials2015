@@ -25,7 +25,7 @@ end
 
 groups = 9 # number of groups (including group 0 which is the sample sorting)
 #elements = [500000, 500000, 1000000] 
-inFileNames = ["sample3.txt", "sample4.txt", "sample5.txt"]
+inFileNames = ["sample3.txt", "sample4.txt"]
 runTimes = []
 sortedTimes = []
 
@@ -91,7 +91,7 @@ results = Array.new(groups) { |i| Array.new(3) { |i| 0 }}
 end
 
 # fill in the sums of places and medians
-lambdas.length.times do |r|
+inFileNames.length.times do |r|
   sortedTimes[r].length.times do |s|
     results[sortedTimes[r][s][4]][1] += s + 1 # incrementing the group's total place by index in sortedTimes 
     results[sortedTimes[r][s][4]][2] += sortedTimes[r][s][3]
