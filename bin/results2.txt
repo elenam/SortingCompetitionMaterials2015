@@ -1,0 +1,168 @@
+Running sample4.txt
+
+
+ Group 0: 
+
+13611
+
+13588
+
+13679
+
+Median: 13611.0
+Results of diff:
+
+
+ Group 1: 
+
+2602
+
+2593
+
+2597
+
+Median: 2597.0
+Results of diff:
+
+
+ Group 2: 
+
+2581
+
+2536
+
+2553
+
+Median: 2553.0
+Results of diff:
+
+
+ Group 3: 
+
+2018
+
+1999
+
+1993
+
+Median: 1999.0
+Results of diff:
+
+
+ Group 4: 
+
+3853
+
+3609
+
+3555
+
+Median: 3609.0
+Results of diff:
+
+
+ Group 5: 
+
+2339
+
+2334
+
+2570
+
+Median: 2339.0
+Results of diff:
+
+
+ Group 6: 
+
+657
+
+3943
+
+3928
+
+Median: 3928.0
+Results of diff:
+
+
+ Group 7: 
+
+1479
+
+1475
+
+1490
+
+Median: 1479.0
+Results of diff:
+
+
+ Group 8: 
+
+13150
+
+12939
+
+13086
+
+Median: 13086.0
+Results of diff:
+
+
+ Group 9: 
+
+
+
+
+Median: 0.0
+Results of diff:
+
+
+ Group 10: 
+
+This program seems to be looping infinitely
+
+This program seems to be looping infinitely
+
+This program seems to be looping infinitely
+
+Median: 0.0
+Results of diff:
+
+
+ Group 11: 
+
+13850
+
+13656
+
+13921
+
+Median: 13850.0
+Results of diff:
+
+
+ Group 12: 
+
+8569
+
+9383
+
+9438
+
+Median: 9383.0
+Results of diff:
+
+Files outRun2Group12.txt and outRun2Group0.txt differ
+
+ Group 13: 
+
+1317
+
+1279
+
+1292
+
+Median: 1292.0
+Results of diff:
+

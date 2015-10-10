@@ -23,8 +23,7 @@ def medianOfThree arr
   end
 end
 
-groups = 9 # number of groups (including group 0 which is the sample sorting)
-#elements = [500000, 500000, 1000000] 
+groups = 14 # number of groups (including group 0 which is the sample sorting)
 inFileNames = ["sample3.txt", "sample4.txt"]
 runTimes = []
 sortedTimes = []
@@ -35,7 +34,7 @@ inFileNames.length.times do |r|
   # generate data, store it in a file
   resultsFile = "results#{r + 1}.txt"
   #system("java DataGenerator #{inFileNames[r]} #{elements[r]} #{lambdas[r]}")
-  system("echo 'Running lambda =  #{inFileNames[r]}\n' >> #{resultsFile}")
+  system("echo 'Running #{inFileNames[r]}\n' >> #{resultsFile}")
   runTimes[r] = []
  
   # run all groups
