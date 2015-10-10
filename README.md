@@ -73,3 +73,4 @@ The language used is Java 8 (as installed in the CSci lab). It's ran on a single
 I will post a script for running this program (with a correctness check and all), but for now a couple of things to know: run your program out of `/tmp` directory to avoid overhead of communications with the file server, and pin your program to a single core, i.e. run it like this:
 ``taskset -c 0 java GroupN``
 
+Machines that we will be running the competition on have AMD 8350 eight-core processor. In the teaching lab such machines are: sentinel, axiom, eva01, macross, kenshiro, reliant, neoprene, tang, bebop. 
