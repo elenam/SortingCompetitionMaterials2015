@@ -3,6 +3,8 @@
 
 ### to pin to one core, run as: taskset -c 0 ruby run_all.rb
 
+require 'timeout'
+
 def medianOfThree arr
   if arr[0] <= arr[1]
     if arr[1] <= arr[2]
@@ -24,7 +26,7 @@ def medianOfThree arr
 end
 
 groups = 14 # number of groups (including group 0 which is the sample sorting)
-inFileNames = ["sample3.txt", "sample4.txt"]
+inFileNames = ["round2-data1.txt", "round2-data2.txt"]
 runTimes = []
 sortedTimes = []
 
@@ -45,8 +47,14 @@ inFileNames.length.times do |r|
     3.times do |k|
       printed = `java Group#{j} #{inFileNames[r]} outRun#{r + 1}Group#{j}.txt`
       runTimes[r][j][k] = printed.to_f
-      system("echo '#{printed}' >> #{resultsFile}")
-      system("echo '#{printed}'")
+      begin
+      Timeout::timeout(30) do
+        system("echo '#{printed}' >> #{resultsFile}")
+        system("echo '#{printed}'")
+      end
+      rescue Timeout::Error
+        runTimes[r][j][k] = 1000000.0
+      end 
     end
     system("echo 'Median: #{medianOfThree(runTimes[r][j])}' >> #{resultsFile}")
     runTimes[r][j][3] = medianOfThree(runTimes[r][j]) #store the median as the last element 
