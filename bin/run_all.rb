@@ -25,8 +25,9 @@ def medianOfThree arr
   end
 end
 
-groups = 14 # number of groups (including group 0 which is the sample sorting)
+groups = 16 # number of groups (including group 0 which is the sample sorting)
 inFileNames = ["round2-data1.txt", "round2-data2.txt"]
+#inFileNames = ["round2-data2.txt"]
 runTimes = []
 sortedTimes = []
 

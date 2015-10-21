@@ -32,6 +32,8 @@ public class Group0 {
 		
 		sort(toSort);  // JVM warmup
 		
+		//System.gc();
+		
 		toSort = data.clone();
 		
 		Thread.sleep(10); //to let other things finish before timing; adds stability of runs

@@ -1,0 +1,192 @@
+Running round2-data1.txt
+
+
+ Group 0: 
+
+13987
+
+13753
+
+13728
+
+Median: 13753.0
+Results of diff:
+
+
+ Group 1: 
+
+2345
+
+2354
+
+2366
+
+Median: 2354.0
+Results of diff:
+
+
+ Group 2: 
+
+2412
+
+2182
+
+2346
+
+Median: 2346.0
+Results of diff:
+
+Files outRun1Group2.txt and outRun1Group0.txt differ
+
+ Group 3: 
+
+1965
+
+2063
+
+1968
+
+Median: 1968.0
+Results of diff:
+
+
+ Group 4: 
+
+325
+
+323
+
+348
+
+Median: 325.0
+Results of diff:
+
+Files outRun1Group4.txt and outRun1Group0.txt differ
+
+ Group 5: 
+
+1573
+
+1609
+
+1573
+
+Median: 1573.0
+Results of diff:
+
+
+ Group 6: 
+
+1149
+
+1141
+
+1161
+
+Median: 1149.0
+Results of diff:
+
+
+ Group 7: 
+
+1502
+
+1488
+
+1482
+
+Median: 1488.0
+Results of diff:
+
+
+ Group 8: 
+
+1459
+
+1443
+
+1424
+
+Median: 1443.0
+Results of diff:
+
+
+ Group 9: 
+
+13725
+
+14200
+
+14169
+
+Median: 14169.0
+Results of diff:
+
+
+ Group 10: 
+
+0
+
+0
+
+0
+
+Median: 0.0
+Results of diff:
+
+Files outRun1Group10.txt and outRun1Group0.txt differ
+
+ Group 11: 
+
+Median: 116335566.0
+Results of diff:
+
+Files outRun1Group11.txt and outRun1Group0.txt differ
+
+ Group 12: 
+
+1195
+
+1185
+
+1222
+
+Median: 1195.0
+Results of diff:
+
+
+ Group 13: 
+
+291
+
+285
+
+3403
+
+Median: 291.0
+Results of diff:
+
+
+ Group 14: 
+
+1410
+
+1406
+
+1406
+
+Median: 1406.0
+Results of diff:
+
+
+ Group 15: 
+
+816
+
+782
+
+797
+
+Median: 797.0
+Results of diff:
+
