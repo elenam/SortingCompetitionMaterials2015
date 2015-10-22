@@ -6,6 +6,12 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * 
+ * @author Maggie and Ben
+ * 
+ */
+
 public class Group8 {
 	public static void main(String[] args) throws InterruptedException {	
 		// Maggie and Ben

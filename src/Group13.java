@@ -5,10 +5,7 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 /**
- * The class implements an efficient, but hopefully correct sorting using
- * QuickSort and bit manipulation.
- *
- * @author elenam
+ * Kevin Arhelger
  */
 
 public class Group13 {

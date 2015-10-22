@@ -9,9 +9,8 @@ import java.util.HashMap;
 import java.util.Scanner;
 
 /**
- Hopefully a slightly better sorting
  * 
- * @author elenam
+ * @author Elena
  * 
  */
 

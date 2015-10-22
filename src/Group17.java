@@ -7,10 +7,7 @@ import java.util.Comparator;
 import java.util.Scanner;
 
 /**
- * The class implements inefficient, but correct, sorting according to the
- * comparison defined in the comparator.
- * 
- * @author elenam
+ 
  * 
  */
 
