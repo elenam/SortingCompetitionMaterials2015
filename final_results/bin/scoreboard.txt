@@ -1,0 +1,39 @@
+group 13 took place  1. The sum of places is 2, the sum of medians is 309.0
+
+group 4 took place  2. The sum of places is 5, the sum of medians is 547.0
+
+group 18 took place  3. The sum of places is 5, the sum of medians is 645.0
+
+group 6 took place  4. The sum of places is 7 (changed from place 4 to place 3
+      in the second run since split place 3 with team 4), the sum of medians is 674.0
+
+group 15 took place  5. The sum of places is 10, the sum of medians is 798.0
+
+group 16 took place  6. The sum of places is 13, the sum of medians is 1113.0
+
+group 1 took place  7. The sum of places is 13, the sum of medians is 1520.0
+
+group 12 took place  8. The sum of places is 18, the sum of medians is 2021.0
+
+group 17 took place  9. The sum of places is 18, the sum of medians is 2235.0
+
+group 14 took place  10. The sum of places is 20, the sum of medians is 2339.0
+
+group 8 took place  11. The sum of places is 23, the sum of medians is 2443.0
+
+group 11 took place  12. The sum of places is 24, the sum of medians is 2436.0
+
+group 5 took place  13. The sum of places is 26, the sum of medians is 2570.0
+
+group 7 took place  14. The sum of places is 28, the sum of medians is 2630.0
+
+group 2 took place  15. The sum of places is 29, the sum of medians is 2644.0
+
+group 9 took place  16. The sum of places is 30, the sum of medians is 2814.0
+
+group 3 took place  17. The sum of places is 34, the sum of medians is 3611.0
+
+group 0 took place  18. The sum of places is 36, the sum of medians is 9925.0
+
+group 10 took place  19. The sum of places is 38, the sum of medians is 2000000.0
+

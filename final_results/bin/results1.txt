@@ -1,0 +1,231 @@
+Running final_data1.txt
+
+
+ Group 0: 
+
+7768
+
+7603
+
+7721
+
+Median: 7721.0
+Results of diff:
+
+
+ Group 1: 
+
+1264
+
+1252
+
+1196
+
+Median: 1252.0
+Results of diff:
+
+
+ Group 2: 
+
+1946
+
+1939
+
+1934
+
+Median: 1939.0
+Results of diff:
+
+
+ Group 3: 
+
+2875
+
+2944
+
+2899
+
+Median: 2899.0
+Results of diff:
+
+
+ Group 4: 
+
+323
+
+335
+
+327
+
+Median: 327.0
+Results of diff:
+
+
+ Group 5: 
+
+1972
+
+1979
+
+1981
+
+Median: 1979.0
+Results of diff:
+
+
+ Group 6: 
+
+465
+
+454
+
+448
+
+Median: 454.0
+Results of diff:
+
+
+ Group 7: 
+
+2090
+
+2020
+
+2022
+
+Median: 2022.0
+Results of diff:
+
+
+ Group 8: 
+
+1930
+
+1893
+
+1914
+
+Median: 1914.0
+Results of diff:
+
+
+ Group 9: 
+
+2160
+
+2180
+
+2190
+
+Median: 2180.0
+Results of diff:
+
+
+ Group 10: 
+
+56798
+
+56751
+
+56275
+
+Median: 56751.0
+Results of diff:
+
+Files outRun1Group10.txt and outRun1Group0.txt differ
+
+ Group 11: 
+
+1758
+
+1765
+
+1761
+
+Median: 1761.0
+Results of diff:
+
+
+ Group 12: 
+
+1623
+
+1532
+
+1534
+
+Median: 1534.0
+Results of diff:
+
+
+ Group 13: 
+
+208
+
+214
+
+209
+
+Median: 209.0
+Results of diff:
+
+
+ Group 14: 
+
+1865
+
+1865
+
+1873
+
+Median: 1865.0
+Results of diff:
+
+
+ Group 15: 
+
+546
+
+555
+
+551
+
+Median: 551.0
+Results of diff:
+
+
+ Group 16: 
+
+846
+
+845
+
+839
+
+Median: 845.0
+Results of diff:
+
+
+ Group 17: 
+
+1758
+
+1795
+
+1807
+
+Median: 1795.0
+Results of diff:
+
+
+ Group 18: 
+
+420
+
+452
+
+429
+
+Median: 429.0
+Results of diff:
+
