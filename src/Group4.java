@@ -10,11 +10,12 @@ import java.util.Scanner;
  * The class implements inefficient, but correct, sorting according to the
  * comparison defined in the comparator.
  * 
- * @author elenam
+ * @author Joseph and Sean
  * 
  */
 
-public class Group0 {
+
+public class Group4 {
 
 	public static void main(String[] args) throws InterruptedException {
 		if (args.length < 2) {
@@ -22,17 +23,16 @@ public class Group0 {
 					.println("Please run with two command line arguments: input and output file names");
 			System.exit(0);
 		}
-
+		
 		String inputFileName = args[0];
 		String outFileName = args[1];
 		
 		String[] data = readInData(inputFileName);
+	
 		
-		String [] toSort = data.clone();
+		String[] toSort = data.clone();
 		
-		sort(toSort);  // JVM warmup
-		
-		//System.gc();
+		sort(toSort); // jvm warmup
 		
 		toSort = data.clone();
 		
@@ -70,7 +70,7 @@ public class Group0 {
 
 	// YOUR SORTING METHOD GOES HERE: (you may call other methods and use other classes). 
 	private static void sort(String[] toSort) {
-		Arrays.sort(toSort, new StringComparator());
+		groupNum.sort(toSort);
 	}
 
 	private static void writeOutResult(String[] sorted, String outputFilename) {
@@ -103,9 +103,9 @@ public class Group0 {
 
 		@Override
 		public int compare(String str1, String str2) {
-			if ((getSumFirstFourDigits(str1)) < (getSumFirstFourDigits(str2))) {
+			if ((getSumFirstFourDigits(str1) % 10) < (getSumFirstFourDigits(str2) % 10)) {
 				return 1;
-			} else if ((getSumFirstFourDigits(str1)) > (getSumFirstFourDigits(str2))) {
+			} else if ((getSumFirstFourDigits(str1) % 10) > (getSumFirstFourDigits(str2) % 10)) {
 				return -1;
 			} else if (getAllDigits(str1) < getAllDigits(str2)) {
 				return -1;
@@ -117,7 +117,11 @@ public class Group0 {
 		}
 
 		private int getSumFirstFourDigits(String s) {
-			return (s.charAt(2) + s.charAt(3) + s.charAt(4) + s.charAt(5) - 4 * '0') % 10;
+			int digit1 = new Integer(s.substring(2, 3));
+			int digit2 = new Integer(s.substring(3, 4));
+			int digit3 = new Integer(s.substring(4, 5));
+			int digit4 = new Integer(s.substring(5, 6));
+			return digit1 + digit2 + digit3 + digit4;
 		}
 
 		private int getAllDigits(String s) {

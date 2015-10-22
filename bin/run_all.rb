@@ -25,8 +25,8 @@ def medianOfThree arr
   end
 end
 
-groups = 16 # number of groups (including group 0 which is the sample sorting)
-inFileNames = ["round2-data1.txt", "round2-data2.txt"]
+groups = 19 # number of groups (including group 0 which is the sample sorting)
+inFileNames = ["final_data1.txt", "final_data2.txt"]
 #inFileNames = ["round2-data2.txt"]
 runTimes = []
 sortedTimes = []
@@ -46,7 +46,7 @@ inFileNames.length.times do |r|
     system("echo '\n Group #{j}: \n' >> #{resultsFile}")
     runTimes[r][j] = []
     3.times do |k|
-      printed = `java Group#{j} #{inFileNames[r]} outRun#{r + 1}Group#{j}.txt`
+      printed = `java -Xms3G Group#{j} #{inFileNames[r]} outRun#{r + 1}Group#{j}.txt`
       runTimes[r][j][k] = printed.to_f
       begin
       Timeout::timeout(30) do

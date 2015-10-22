@@ -3,18 +3,19 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.Scanner;
 
 /**
- * The class implements inefficient, but correct, sorting according to the
- * comparison defined in the comparator.
+ Hopefully a slightly better sorting
  * 
  * @author elenam
  * 
  */
 
-public class Group0 {
+public class Group18 {
 
 	public static void main(String[] args) throws InterruptedException {
 		if (args.length < 2) {
@@ -70,7 +71,29 @@ public class Group0 {
 
 	// YOUR SORTING METHOD GOES HERE: (you may call other methods and use other classes). 
 	private static void sort(String[] toSort) {
-		Arrays.sort(toSort, new StringComparator());
+		ArrayList<DataObject> data = new ArrayList<DataObject>(toSort.length/20);
+		HashMap<Integer,DataObject> seen = new HashMap<Integer,DataObject>();
+		
+		for (int i = 0; i < toSort.length; ++i) {
+			int value = Integer.parseInt(toSort[i].substring(2));
+			DataObject d = seen.get(value);
+			if (d != null) {
+				d.incrementCount();
+			} else {
+				d = new DataObject(toSort[i], value);
+				seen.put(value, d);
+				data.add(d);
+			}
+		}
+		Collections.sort(data);
+		
+		int i = 0;
+		for (DataObject d: data) {
+			for (int j = 0; j < d.count; ++j) {
+				String s= d.itsString;
+				toSort[i++] = s;
+			}
+		}
 	}
 
 	private static void writeOutResult(String[] sorted, String outputFilename) {
@@ -85,45 +108,40 @@ public class Group0 {
 		}
 	}
 
-	/**
-	 * The comparator implements the following comparison of strings of 
-	 * the form 0.123456789 with exactly 9 digits after the decimal point:
-	 * 
-	 * n1 precedes n2 in the ordering if and only if one of the following is true:
-	 * 
-	 * - The sum of the first four digits (after the decimal point) of n1 modulo 10 is greater than the sum of the 
-	 *   first four digits of n2 modulo 10.
-	 * - The sums of the first four digits of n1 and n2 are equal and the value of n1 is smaller than the value of n2.
-	 * 
-	 * @author elenam
-	 * 
-	 */
+
 	// the inner class has to be static because it is used in a static method
-	private static class StringComparator implements Comparator<String> {
+	private static class DataObject implements Comparable<DataObject> {
+		private int firstFour;
+		private int value;
+		final public String itsString;
+		private int count = 1;
+		private static final int subtract = (4 * '0') % 10; 
+		
+		public DataObject(String s, int itsValue) {
+			itsString = s;
+			firstFour = (s.charAt(2) + s.charAt(3) + s.charAt(4) + s.charAt(5) - subtract) % 10;
+			value = itsValue;
+		}
+		
+		public void incrementCount() {
+			++count;
+		}
 
 		@Override
-		public int compare(String str1, String str2) {
-			if ((getSumFirstFourDigits(str1)) < (getSumFirstFourDigits(str2))) {
-				return 1;
-			} else if ((getSumFirstFourDigits(str1)) > (getSumFirstFourDigits(str2))) {
-				return -1;
-			} else if (getAllDigits(str1) < getAllDigits(str2)) {
-				return -1;
-			} else if (getAllDigits(str1) > getAllDigits(str2)) {
-				return 1;
-			} else {
-				return 0;
-			}
-		}
+		public int compareTo(DataObject other) {
+			if (firstFour != other.firstFour) {
+				// the opposite direction
+				return (other.firstFour - firstFour);
+			} 
+				
+			return value - other.value;
 
-		private int getSumFirstFourDigits(String s) {
-			return (s.charAt(2) + s.charAt(3) + s.charAt(4) + s.charAt(5) - 4 * '0') % 10;
 		}
-
-		private int getAllDigits(String s) {
-			return new Integer(s.substring(2));
+		
+		public String toString() {
+			return "firstFour: " + firstFour + " intValue = " + value;
 		}
-
+		
 	}
-
+ 
 }

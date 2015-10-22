@@ -4,19 +4,14 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
+import java.util.Random;
 import java.util.Scanner;
 
-/**
- * The class implements inefficient, but correct, sorting according to the
- * comparison defined in the comparator.
- * 
- * @author elenam
- * 
- */
+// Mark, Matthew 
 
-public class Group0 {
+public class Group5 {
 
-	public static void main(String[] args) throws InterruptedException {
+	public static void main(String[] args) throws InterruptedException{
 		if (args.length < 2) {
 			System.out
 					.println("Please run with two command line arguments: input and output file names");
@@ -31,8 +26,6 @@ public class Group0 {
 		String [] toSort = data.clone();
 		
 		sort(toSort);  // JVM warmup
-		
-		//System.gc();
 		
 		toSort = data.clone();
 		
@@ -49,6 +42,7 @@ public class Group0 {
 		writeOutResult(toSort, outFileName);
 	}
 
+	
 	private static String[] readInData(String inputFileName) {
 		ArrayList<String> input = new ArrayList<String>();
 		Scanner in;
@@ -63,16 +57,50 @@ public class Group0 {
 			e.printStackTrace();
 		}
 
-		// System.out.println(input);
 
 		return input.toArray(new String[0]); // convert to array of strings
 	}
-
-	// YOUR SORTING METHOD GOES HERE: (you may call other methods and use other classes). 
+	
+	
 	private static void sort(String[] toSort) {
 		Arrays.sort(toSort, new StringComparator());
+		countSortModified(toSort);
 	}
 
+	
+	private static void countSortModified(String[] arr){
+		int n = arr.length;
+		int sumOfN;
+		int[] modCount = {0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6};
+		int[] itemKeys = new int[n];
+		
+		int[] count = new int[10];
+		String[] output = new String[n];
+		for(int i = 0; i < n; i++){
+			sumOfN = getSumFirstFourDigits(arr[i]);
+			count[modCount[sumOfN]] += 1;
+			itemKeys[i] = modCount[sumOfN];
+		}
+		int total= 0;
+		int oldCount;
+		for(int x = 9; x >= 0; x--){
+			oldCount = count[x];
+			count[x] = total;
+			total += oldCount;
+		}
+		
+		for(int y = 0; y < n; y++){
+			int key = itemKeys[y];
+			output[count[key]] = arr[y];
+			count[key] += 1;
+		}
+		
+		for(int m = 0; m < n; m++){
+			arr[m] = output[m];
+		}
+	}
+	
+	
 	private static void writeOutResult(String[] sorted, String outputFilename) {
 		try {
 			PrintWriter out = new PrintWriter(outputFilename);
@@ -84,46 +112,34 @@ public class Group0 {
 			e.printStackTrace();
 		}
 	}
-
-	/**
-	 * The comparator implements the following comparison of strings of 
-	 * the form 0.123456789 with exactly 9 digits after the decimal point:
-	 * 
-	 * n1 precedes n2 in the ordering if and only if one of the following is true:
-	 * 
-	 * - The sum of the first four digits (after the decimal point) of n1 modulo 10 is greater than the sum of the 
-	 *   first four digits of n2 modulo 10.
-	 * - The sums of the first four digits of n1 and n2 are equal and the value of n1 is smaller than the value of n2.
-	 * 
-	 * @author elenam
-	 * 
-	 */
-	// the inner class has to be static because it is used in a static method
+	
+	
+	private static int getSumFirstFourDigits(String s) {
+		return ((s.charAt(2)-48) + (s.charAt(3)-48) + (s.charAt(4)-48) + (s.charAt(5)-48));
+		
+	}
+	
+	
 	private static class StringComparator implements Comparator<String> {
 
 		@Override
 		public int compare(String str1, String str2) {
-			if ((getSumFirstFourDigits(str1)) < (getSumFirstFourDigits(str2))) {
-				return 1;
-			} else if ((getSumFirstFourDigits(str1)) > (getSumFirstFourDigits(str2))) {
-				return -1;
-			} else if (getAllDigits(str1) < getAllDigits(str2)) {
-				return -1;
-			} else if (getAllDigits(str1) > getAllDigits(str2)) {
-				return 1;
-			} else {
-				return 0;
+			int compVal;
+			for(int i = 2; i<11; i++){
+				compVal = str1.charAt(i) - str2.charAt(i);
+				if(compVal != 0) {
+					return compVal;
+				} 
 			}
+			return 0;
 		}
-
-		private int getSumFirstFourDigits(String s) {
-			return (s.charAt(2) + s.charAt(3) + s.charAt(4) + s.charAt(5) - 4 * '0') % 10;
-		}
-
-		private int getAllDigits(String s) {
-			return new Integer(s.substring(2));
-		}
-
 	}
-
 }
+
+
+
+
+
+
+
+

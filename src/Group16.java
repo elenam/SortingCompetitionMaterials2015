@@ -6,44 +6,34 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.Scanner;
 
-/**
- * The class implements inefficient, but correct, sorting according to the
- * comparison defined in the comparator.
- * 
- * @author elenam
- * 
- */
-
-public class Group0 {
+public class Group16 {
 
 	public static void main(String[] args) throws InterruptedException {
 		if (args.length < 2) {
 			System.out
-					.println("Please run with two command line arguments: input and output file names");
+			.println("Please run with two command line arguments: input and output file names");
 			System.exit(0);
 		}
 
 		String inputFileName = args[0];
 		String outFileName = args[1];
-		
+
 		String[] data = readInData(inputFileName);
-		
+
 		String [] toSort = data.clone();
-		
+
 		sort(toSort);  // JVM warmup
-		
-		//System.gc();
-		
+
 		toSort = data.clone();
-		
+
 		Thread.sleep(10); //to let other things finish before timing; adds stability of runs
 
 		long start = System.currentTimeMillis();
-		
+
 		sort(toSort);
-		
+
 		long end = System.currentTimeMillis();
-		
+
 		System.out.println(end - start);
 
 		writeOutResult(toSort, outFileName);
@@ -70,7 +60,14 @@ public class Group0 {
 
 	// YOUR SORTING METHOD GOES HERE: (you may call other methods and use other classes). 
 	private static void sort(String[] toSort) {
-		Arrays.sort(toSort, new StringComparator());
+		ModData[] data = new ModData[toSort.length];
+		for (int i = 0; i < toSort.length; i++) {
+			data[i] = new ModData(toSort[i]);
+		}
+		Arrays.sort(data, new ModDataComparator());
+		for (int i = 0; i < toSort.length; i++) {
+			toSort[i] = data[i].fullString;
+		}
 	}
 
 	private static void writeOutResult(String[] sorted, String outputFilename) {
@@ -84,46 +81,33 @@ public class Group0 {
 			e.printStackTrace();
 		}
 	}
+	
+	public static class ModData {
+		public String fullString;
+		public int modValue;
+		public int integerValue;
 
-	/**
-	 * The comparator implements the following comparison of strings of 
-	 * the form 0.123456789 with exactly 9 digits after the decimal point:
-	 * 
-	 * n1 precedes n2 in the ordering if and only if one of the following is true:
-	 * 
-	 * - The sum of the first four digits (after the decimal point) of n1 modulo 10 is greater than the sum of the 
-	 *   first four digits of n2 modulo 10.
-	 * - The sums of the first four digits of n1 and n2 are equal and the value of n1 is smaller than the value of n2.
-	 * 
-	 * @author elenam
-	 * 
-	 */
-	// the inner class has to be static because it is used in a static method
-	private static class StringComparator implements Comparator<String> {
+		public ModData(String input) {
+			fullString = input;
+			modValue = (input.charAt(2) + input.charAt(3) + input.charAt(4) + input.charAt(5) + 8) % 10;
+			integerValue = (input.charAt(2) - 48) * 100000000 + (input.charAt(3) - 48) * 10000000 + (input.charAt(4) - 48) * 1000000 +
+					(input.charAt(5) - 48) * 100000 + (input.charAt(6) - 48) * 10000 + (input.charAt(7) - 48) * 1000 + (input.charAt(8) - 48) * 100 +
+					(input.charAt(9) - 48) * 10 + (input.charAt(10) - 48);
+		}
+	}
+	
+	public static class ModDataComparator implements Comparator<ModData> {
 
 		@Override
-		public int compare(String str1, String str2) {
-			if ((getSumFirstFourDigits(str1)) < (getSumFirstFourDigits(str2))) {
-				return 1;
-			} else if ((getSumFirstFourDigits(str1)) > (getSumFirstFourDigits(str2))) {
-				return -1;
-			} else if (getAllDigits(str1) < getAllDigits(str2)) {
-				return -1;
-			} else if (getAllDigits(str1) > getAllDigits(str2)) {
-				return 1;
-			} else {
-				return 0;
+		public int compare(ModData value1, ModData value2) {
+			// comparator for modValue and integerValue
+			int prefixDifference = value2.modValue - value1.modValue;
+			if (prefixDifference != 0) {
+				// negative iff value1 should precede value2
+				return prefixDifference;
 			}
+			// negative iff value1 should precede value2
+			return value1.integerValue - value2.integerValue;
 		}
-
-		private int getSumFirstFourDigits(String s) {
-			return (s.charAt(2) + s.charAt(3) + s.charAt(4) + s.charAt(5) - 4 * '0') % 10;
-		}
-
-		private int getAllDigits(String s) {
-			return new Integer(s.substring(2));
-		}
-
 	}
-
 }

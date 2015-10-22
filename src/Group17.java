@@ -14,7 +14,7 @@ import java.util.Scanner;
  * 
  */
 
-public class Group0 {
+public class Group17 {
 
 	public static void main(String[] args) throws InterruptedException {
 		if (args.length < 2) {
@@ -31,8 +31,6 @@ public class Group0 {
 		String [] toSort = data.clone();
 		
 		sort(toSort);  // JVM warmup
-		
-		//System.gc();
 		
 		toSort = data.clone();
 		
@@ -68,9 +66,18 @@ public class Group0 {
 		return input.toArray(new String[0]); // convert to array of strings
 	}
 
-	// YOUR SORTING METHOD GOES HERE: (you may call other methods and use other classes). 
+	// YOUR SORTING METHOD GOES HERE: (you may call other methods and use other classes).
+	//Max Magnuson and Kirbie Dramdahl
 	private static void sort(String[] toSort) {
-		Arrays.sort(toSort, new StringComparator());
+		if(toSort.length > 4000000)
+		{
+			BucketWithArrays.sort(toSort);
+		}
+		else
+		{
+			BucketOffSet.sort(toSort);
+		}
+		
 	}
 
 	private static void writeOutResult(String[] sorted, String outputFilename) {
@@ -86,14 +93,10 @@ public class Group0 {
 	}
 
 	/**
-	 * The comparator implements the following comparison of strings of 
-	 * the form 0.123456789 with exactly 9 digits after the decimal point:
-	 * 
-	 * n1 precedes n2 in the ordering if and only if one of the following is true:
-	 * 
-	 * - The sum of the first four digits (after the decimal point) of n1 modulo 10 is greater than the sum of the 
-	 *   first four digits of n2 modulo 10.
-	 * - The sums of the first four digits of n1 and n2 are equal and the value of n1 is smaller than the value of n2.
+	 * The comparator provides a comparison method for strings The strings will
+	 * be sorted by the following: by length (in increasing order), within each
+	 * length, by the sum of all ones (also in increasing order) within each
+	 * group as determined above, alphabetically.
 	 * 
 	 * @author elenam
 	 * 
@@ -103,9 +106,9 @@ public class Group0 {
 
 		@Override
 		public int compare(String str1, String str2) {
-			if ((getSumFirstFourDigits(str1)) < (getSumFirstFourDigits(str2))) {
+			if ((getSumFirstFourDigits(str1) % 10) < (getSumFirstFourDigits(str2) % 10)) {
 				return 1;
-			} else if ((getSumFirstFourDigits(str1)) > (getSumFirstFourDigits(str2))) {
+			} else if ((getSumFirstFourDigits(str1) % 10) > (getSumFirstFourDigits(str2) % 10)) {
 				return -1;
 			} else if (getAllDigits(str1) < getAllDigits(str2)) {
 				return -1;
@@ -117,7 +120,11 @@ public class Group0 {
 		}
 
 		private int getSumFirstFourDigits(String s) {
-			return (s.charAt(2) + s.charAt(3) + s.charAt(4) + s.charAt(5) - 4 * '0') % 10;
+			int digit1 = new Integer(s.substring(2, 3));
+			int digit2 = new Integer(s.substring(3, 4));
+			int digit3 = new Integer(s.substring(4, 5));
+			int digit4 = new Integer(s.substring(5, 6));
+			return digit1 + digit2 + digit3 + digit4;
 		}
 
 		private int getAllDigits(String s) {
@@ -127,3 +134,4 @@ public class Group0 {
 	}
 
 }
+
