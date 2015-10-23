@@ -82,3 +82,20 @@ I will post a script for running this program (with a correctness check and all)
 ``taskset -c 0 java GroupN``
 
 Machines that we will be running the competition on have AMD 8350 eight-core processor. In the teaching lab such machines are: sentinel, axiom, eva01, macross, kenshiro, reliant, neoprene, tang, bebop. 
+
+### Congratulations to the winners!
+See the (scoreboard)(https://github.com/elenam/SortingCompetitionMaterials2015/blob/master/final_results/bin/scoreboard.txt) for the overview of the results. The data for the final is in two files:  (final_data1.txt)(https://github.com/elenam/SortingCompetitionMaterials2015/blob/master/final_results/bin/final_data1.txt) has 2,500,000 elements, the times for each team are in (results1)(https://github.com/elenam/SortingCompetitionMaterials2015/blob/master/final_results/bin/results1.txt); (final_data2.txt)(https://github.com/elenam/SortingCompetitionMaterials2015/blob/master/final_results/bin/final_data2.txt) has 724,359 elements, the times for each team are in (results2)(https://github.com/elenam/SortingCompetitionMaterials2015/blob/master/final_results/bin/results2.txt);
+
+Top teams are (names listed as given by the authors):
+* 1st place overall: Group 13 (Kevin Arhelger),
+* 2nd place overall (1st in the class): Group 4 (Joseph and Sean),
+* 3rd place overall: Group 18 (Elena M.),
+* 4th place overall (2nd in the class): Group 6 (Emma Sax and Dan Stelljes),
+* 5th place overall: Group 15 (Jack Ziegler),
+* 6th place overall: Group 16 (Lemmon),
+* 7th place overall (3rd in the class): Group 1 (Resa and Yuting),
+* 8th place overall (4th in the class): Group 12 (Thomas Hagen and Peter Hanson),
+
+Congratulations to the winners and thanks to everyone for a really cool competition and lots of cool ideas! We will be posting slides from the presenations here as well, in early November. 
+
+
