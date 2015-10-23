@@ -9,7 +9,8 @@ group 6 took place  4. The sum of places is 7 (changed from place 4 to place 3
 
 group 15 took place  5. The sum of places is 10, the sum of medians is 798.0
 
-group 16 took place  6. The sum of places is 13, the sum of medians is 1113.0
+group 16 took place  6. The sum of places is 12 (changed from place 6 to place 5
+      in the second run since split place 5 with team 1), the sum of medians is 1113.0
 
 group 1 took place  7. The sum of places is 13, the sum of medians is 1520.0
 
