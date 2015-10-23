@@ -94,7 +94,9 @@ Top teams are (names listed as given by the authors):
 * 5th place overall: Group 15 (Jack Ziegler),
 * 6th place overall: Group 16 (Lemmon),
 * 7th place overall (3rd in the class): Group 1 (Resa and Yuting),
-* 8th place overall (4th in the class): Group 12 (Thomas Hagen and Peter Hanson),
+* 8th place overall (4th in the class): Group 12 (Thomas Hagen and Peter Hanson).
+
+All source files are posted in the `src/` directory. 
 
 Congratulations to the winners and thanks to everyone for a really cool competition and lots of cool ideas! We will be posting slides from the presenations here as well, in early November. 
 
