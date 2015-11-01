@@ -1,4 +1,4 @@
-++ Presentation requirements.
+## Presentation requirements.
 
 You need to prepare a 3-5 minute presentation about your algorithm. Prepare 3-5 slides about your algorithm in PDF format. Once your presentation is done, either issue a pull request to add it to this directory of the repo, or send it to me by email. The final time to submit it is Wedn Nov 4 at 11:59pm. 
 
