@@ -15,3 +15,19 @@ Your presenation has to address:
 Keep in mind that lists and tables work better for slides than long sentences.
 
 Please take notes when listening to the presentation; you will need those for the final write-up.
+
+## Final write-up requirements.
+
+The final write-up is individual work. 
+
+The final write-up has two parts: the description of your algorithm (if you presented on another group's algorithm then of their algorithm), and a summary of what algorithms overall turned out to be the most effective for this problem and why.
+
+Each of the two parts should be about a page long.
+
+The algorithm description should follow the guidelines for the presentation, only be more detailed. Examples (of data storage, etc.) help.
+
+The algorithm comparison should list all approaches that were used for the problem by all teams (e.g. "three groups used variations of radix sort") and their comparative effectiveness. Note that data represntation plays a significant part in efficiency. 
+
+Please summarize what have you learned through the competition.
+
+The final write-up needs to be submitted to me by the end of the day Friday Nov 13 as a google or a pdf file, by email. 
